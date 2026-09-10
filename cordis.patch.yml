@@ -1,0 +1,8 @@
+# dsh-prompt-refine 的 bundle patch —— 安装到 profile 后自动进配置层
+# name 用包名(不是 file:// 源码路径):loader 从 profile 的 node_modules
+# 解析到编译好的 lib/index.mjs。指向 TS 源码只在仓库内 dev 模式(pnpm dsh,
+# 带 tsx)下能跑;全局 npm 安装的 dsh 是纯 node ESM,会报
+# ERR_MODULE_NOT_FOUND: Cannot find module '...\src\host'。
+- insert:
+    - id: dsh-prompt-refine
+      name: 'dsh-prompt-refine'
