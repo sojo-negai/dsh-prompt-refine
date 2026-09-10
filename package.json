@@ -1,0 +1,42 @@
+{
+  "name": "dsh-prompt-refine",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.mjs",
+  "description": "DSH 提示词优化插件:在发送前拦截用户提示词,结合上下文给出 3 条改进建议",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "default": "./lib/index.mjs"
+    },
+    "./client": {
+      "default": "./lib/client.iife.js"
+    },
+    "./src/*": "./src/*",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsdown && tsdown --config ./tsdown.client.config.ts"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "devDependencies": {
+    "tsdown": "^0.23.0",
+    "typescript": "^5.9.2"
+  }
+}
