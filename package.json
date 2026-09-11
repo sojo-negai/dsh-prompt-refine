@@ -5,6 +5,17 @@
   "main": "lib/index.mjs",
   "description": "DSH 提示词优化插件:在发送前拦截用户提示词,结合上下文给出 3 条改进建议",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sojo-negai/dsh-prompt-refine.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "prompt",
+    "prompt-engineering"
+  ],
   "exports": {
     ".": {
       "default": "./lib/index.mjs"
@@ -25,7 +36,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsdown && tsdown --config ./tsdown.client.config.ts"
+    "build": "tsdown && tsdown --config ./tsdown.client.config.ts",
+    "prepack": "npm run build"
   },
   "dsh": {
     "bundle": {
@@ -34,6 +46,9 @@
     "client": {
       "platform": "web"
     }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-llm": ">=0.1.0-0 <0.1.1-0 || >=0.1.1-0 <0.1.2-0 || >=0.1.2-0 <0.2.0-0"
   },
   "devDependencies": {
     "tsdown": "^0.23.0",
