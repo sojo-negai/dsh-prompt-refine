@@ -34,6 +34,17 @@ constraint 缺边界约束     → 要求 O(n log n),处理空数组与重复元
 
 ## 安装
 
+### 方式一：npm 安装（推荐）
+
+```bash
+cd ~/.dsh/profiles/web    # 换成你要装进去的 profile
+pnpm add dsh-prompt-refine
+```
+
+包内自带 `dsh.bundle.patch` 声明，安装后把 `dsh-prompt-refine` 加进该 profile `package.json` 的 `dsh.profile.bundles` 数组即可激活，然后重启 DSH。
+
+### 方式二：源码安装（开发用）
+
 ```bash
 pnpm install
 pnpm build
